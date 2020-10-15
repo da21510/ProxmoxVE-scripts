@@ -6,7 +6,8 @@ apt upgrade -y
 
 apt install -y vim
 
-sed -i 's/if (data.status !== '"'"'Active'"'"') {/if (false) {/g' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+sed -i 's/if (res === null || res === undefined || !res || res/if (false) {/g' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+sed -i '/.data.status !== '"'"'Active'"'"') {/d' /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 
 wget -qO- https://raw.githubusercontent.com/da21510/gpupassthrough_script/master/setup-modules.sh | bash
 wget -qO- https://raw.githubusercontent.com/da21510/gpupassthrough_script/master/setup-vfio.sh | bash
