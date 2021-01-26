@@ -2,7 +2,7 @@ echo "" >> /etc/apt/sources.list
 echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" >> /etc/apt/sources.list
 sed -i 's/deb/#&/g' /etc/apt/sources.list.d/pve-enterprise.list
 apt update
-apt upgrade -y
+apt dist-upgrade -y
 
 apt install -y vim
 
